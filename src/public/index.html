@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Course Management System</h1>
+
+        <div style="display: flex; justify-content: space-between;">
+            <a href="#create-course">Create Course</a>
+            <a href="#view-course">View All Courses</a>
+            <a href="#delete-course">Delete Course</a>
+        </div>
+        
+        <br>
+
+        <h2 id="create-course">Create/Update a Course</h2>
+        <form id="create-course-form">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" placeholder="Course title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <input type="text" class="form-control" id="description" placeholder="Description" required>
+            </div>
+
+                <legend>Module</legend>
+                <div class="module">
+                    <div class="form-group">
+                        <label for="module-title">Module Title:</label>
+                        <input type="text" class="form-control" id="module-title" name="module-title" required>
+                    </div>
+
+                        <legend>Lessons</legend>
+                        <div class="lesson">
+                            <div class="form-group">
+                                <label for="lesson-title">Lesson Title:</label>
+                                <input type="text" class="form-control" id="lesson-title" name="lesson-title" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lesson-description">Lesson Description:</label>
+                                <textarea class="form-control" id="lesson-description" name="lesson-description" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lesson-topics">Topics (comma-separated):</label>
+                                <input type="text" class="form-control" id="lesson-topics" name="lesson-topics" required>
+                            </div>
+
+                                <legend>Content</legend>
+                                <div class="form-group">
+                                    <label for="content-type">Content Type:</label>
+                                    <select class="form-control" id="content-type" name="content-type" required>
+                                        <option value="text">Text</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="content-text">Content Data:</label>
+                                    <textarea class="form-control" id="content-text" name="content-text" required></textarea>
+                                </div>
+                        </div>
+                </div>
+
+        <div class="result-message" id="result-message" style="display: none;"></div>
+
+        <br>
+            <button type="submit" class="btn btn-custom">Create Course</button>
+            <button type="button" class="btn btn-custom" id="update-btn">Update Course</button>
+
+        </form>
+
+        <br>
+
+
+        <h2 id="view-course">View courses</h2>
+        <button class="btn btn-custom" onclick="getCourses()">Get all courses</button>
+        <ul id="course-list" class="list-group mt-3"></ul>
+
+        <br>
+
+        <h2 id="delete-course">Delete course</h2>
+        <form id="delete-course-form">
+            <div class="form-group">
+                <label for="delete-title">Course title to be deleted:</label>
+                <input type="text" class="form-control" id="delete-title" placeholder="Delete course title" required>
+            </div>
+        <button type="submit" class="btn btn-custom">Delete course</button>
+        </form>
+        <div class="result-message" id="delete-result-message" style="display: none;"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
