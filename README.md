@@ -10,12 +10,12 @@ This project is a Node.js application that provides a RESTful API for managing c
 ## Installation
 1. Clone the repository:
 ```bash 
-git clone https://github.com/vishalkanteppa/
+git clone https://github.com/vishalkanteppa/Course-Management-System.git
 ```
 
 2. Navigate to project folder:
 ```bash 
-cd 
+cd Course-Management-System
 ```
 
 3. Install Dependencies
